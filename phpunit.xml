@@ -10,41 +10,25 @@
          stopOnFailure="false"
          verbose="true">
     <testsuites>
-        <testsuite name="HTTP Client Tests">
-            <directory suffix="Test.php">./tests/Client</directory>
-        </testsuite>
-
-        <testsuite name="Items API Tests">
-            <directory suffix="Test.php">./tests/Items</directory>
+        <testsuite name="Channels API Tests">
+            <directory suffix="Test.php">./tests/Channels</directory>
         </testsuite>
 
         <testsuite name="Inventory API Tests">
             <directory suffix="Test.php">./tests/Inventory</directory>
         </testsuite>
 
-        <testsuite name="Feeds API Tests">
-            <directory suffix="Test.php">./tests/Feeds</directory>
-        </testsuite>
-
-        <testsuite name="Prices API Tests">
-            <directory suffix="Test.php">./tests/Prices</directory>
-        </testsuite>
-
-        <!--<testsuite name="Orders API Tests">
+        <testsuite name="Orders API Tests">
             <directory suffix="Test.php">./tests/Orders</directory>
         </testsuite>
 
-        <testsuite name="Returns/Refunds API Tests">
-            <directory suffix="Test.php">./tests/Returns</directory>
+        <testsuite name="Shipments API Tests">
+            <directory suffix="Test.php">./tests/Shipments</directory>
         </testsuite>
 
-        <testsuite name="Promotions API Tests">
-            <directory suffix="Test.php">./tests/Promotions</directory>
+        <testsuite name="Warehouses API Tests">
+            <directory suffix="Test.php">./tests/Warehouses</directory>
         </testsuite>
-
-        <testsuite name="Reports API Tests">
-            <directory suffix="Test.php">./tests/Reports</directory>
-        </testsuite>-->
     </testsuites>
     <!-- <filter>
     </filter> -->

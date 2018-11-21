@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "SellbriteApi\\" : "src/"
+            "TrollAndToad\\Sellbrite\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SellbriteApi\\Test\\": "tests/"
+            "TrollAndToad\\Sellbrite\\Test\\": "tests/"
         }
     },
     "require": {

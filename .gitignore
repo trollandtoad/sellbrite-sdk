@@ -17,3 +17,6 @@
 
 # keep some hiddens
 !/.gitignore
+
+# ignore bootstrap files
+/bootstrap/*
