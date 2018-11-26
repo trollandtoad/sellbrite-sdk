@@ -2,7 +2,6 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.4/phpunit.xsd"
          backupGlobals="true"
          backupStaticAttributes="false"
-         bootstrap="bootstrap/start.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -30,9 +29,15 @@
             <directory suffix="Test.php">./tests/Warehouses</directory>
         </testsuite>
     </testsuites>
-    <!-- <filter>
-    </filter> -->
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory suffix=".php">./src/Interfaces</directory>
+            </exclude>
+        </whitelist>
+    </filter>
     <logging>
-        <log type="testdox-html" target="tests/unit-test-report/testdox.html"/>
+        <log type="coverage-html" target="tests/coverage" lowUpperBound="35" highLowerBound="85" />
     </logging>
 </phpunit>
