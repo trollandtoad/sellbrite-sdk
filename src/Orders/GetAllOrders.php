@@ -136,4 +136,4 @@ class GetAllOrders extends Core
                 return false;
         }
     } // End public function validateField
-} // End class GetWarehouses
+} // End class GetAllOrders
