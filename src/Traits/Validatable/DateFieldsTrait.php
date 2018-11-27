@@ -4,7 +4,7 @@ namespace TrollAndToad\Sellbrite\Traits\Validatable;
 
 use Carbon\Carbon;
 
-trait DateFields
+trait DateFieldsTrait
 {
     private function isDateValid(string $dateField)
     {

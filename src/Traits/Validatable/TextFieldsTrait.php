@@ -4,7 +4,7 @@ namespace TrollAndToad\Sellbrite\Traits\Validatable;
 
 use Carbon\Carbon;
 
-trait TextFields
+trait TextFieldsTrait
 {
     /**
      * @return boolean
