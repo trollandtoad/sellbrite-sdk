@@ -18,7 +18,7 @@ class GetAllOrders extends Core
      * @param string $sb_payment_status Filters orders by payment status. Accepts: "all", "partial", or "none"
      * @param string $shipment_status Filters by shipment status. Accepts: "all", "partial", or "none"
      *
-     * @return string
+     * @return object|string
      */
     public function sendRequest(
         int $page = null,
@@ -93,7 +93,9 @@ class GetAllOrders extends Core
         switch ($statusCode)
         {
             case 200:
-                return (string) $response->getBody();
+                // Returning the PSR7 response object because of the Total-Pages header. Will handle the
+                // total pages logic outside of this class
+                return $response;
                 break;
             case 401:
                 throw new \Exception("401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
@@ -110,12 +112,11 @@ class GetAllOrders extends Core
     {
         try {
             Carbon::parse($dateField);
+            return true;
         } catch (\Exception $e)
         {
             return false;
         }
-
-        return true;
     } // public function validateDateField
 
     /**

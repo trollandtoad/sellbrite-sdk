@@ -165,6 +165,38 @@ class GetOrderTest extends TestCase
         );
     } // End public function testGetOrderApiRequest
 
+    public function testBadCredentialsForOrdersApiWithoutSBOrderSequenceNumber()
+    {
+        // Get the stored credentials
+        $accountToken = '';
+        $secretKey    = '';
+
+        // Create a mock client object
+        $mockClient = \Mockery::mock(ClientInterface::class);
+
+        // The mock client should receive a request call and it should return at PSR-7 Response object
+        // cotaining an error
+        $mockClient->shouldReceive('request')
+            ->andReturns(new \GuzzleHttp\Psr7\Response(
+                401,
+                [ 'Content-Type' => 'application/json' ],
+                "You couldn't be authenticated")
+            );
+
+        // Instantiate a new GetOrder API Object
+        $getOrder = new GetOrder($accountToken, $secretKey, $mockClient);
+
+        $sb_order_sequence = null;
+
+        // Expect an exception from the request
+        $this->expectException(\Exception::class);
+
+        // Send the request and store the response
+        $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
+
+        $this->assertEquals($json, "401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
+    } // End public function testBadCredentialsForOrdersApiWithoutSBOrderSequenceNumber
+
     public function testBadCredentialsForOrdersApiRequestShouldReturnAnException()
     {
         // Get the stored credentials
@@ -192,7 +224,7 @@ class GetOrderTest extends TestCase
         $this->expectException(\Exception::class);
 
         // Send the request and store the response
-        $jsonResponse = $getOrder->sendRequest();
+        $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
 
         $this->assertEquals($json, "401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
     } // End public function testBadCredentialsForOrdersApiRequestShouldReturnAnException
@@ -224,6 +256,6 @@ class GetOrderTest extends TestCase
         $this->expectException(\Exception::class);
 
         // Send the request and store the response
-        $jsonResponse = $getOrder->sendRequest();
+        $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
     } // End public function testBadCredentialsForOrdersApiRequestShouldReturnDefaultException
 } // End class GetChannelsTest
