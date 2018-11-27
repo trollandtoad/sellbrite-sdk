@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace TrollAndToad\Sellbrite\Orders;
 
 use TrollAndToad\Sellbrite\Core\Core;
-use TrollAndToad\Sellbrite\Traits\Validatable\DateFields;
-use TrollAndToad\Sellbrite\Traits\Validatable\TextFields;
+use TrollAndToad\Sellbrite\Traits\Validatable\DateFieldsTrait;
+use TrollAndToad\Sellbrite\Traits\Validatable\TextFieldsTrait;
 
 class GetAllOrders extends Core
 {
-    use DateFields;
-    use TextFields;
+    use DateFieldsTrait;
+    use TextFieldsTrait;
 
     /**
      * @param integer $page Page number

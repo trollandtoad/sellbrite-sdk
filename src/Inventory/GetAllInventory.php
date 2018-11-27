@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace TrollAndToad\Sellbrite\Inventory;
 
 use TrollAndToad\Sellbrite\Core\Core;
-use TrollAndToad\Sellbrite\Traits\Validatable\DateFields;
+use TrollAndToad\Sellbrite\Traits\Validatable\DateFieldsTrait;
 
 class GetAllInventory extends Core
 {
-    use DateFields;
+    use DateFieldsTrait;
 
     /**
      * @param integer $page Page number
