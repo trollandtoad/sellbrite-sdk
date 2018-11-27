@@ -20,3 +20,6 @@
 
 # ignore bootstrap files
 /bootstrap/*
+
+# ignore code coverage folder
+/tests/coverage/*
