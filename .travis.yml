@@ -22,5 +22,6 @@ notifications:
   email:
     recipients:
       - dqfan2012@gmail.com
+      - ryans@trollandtoad.com
     on_success: always
     on_failure: always
