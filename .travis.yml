@@ -1,0 +1,26 @@
+os:
+  - linux
+
+language: php
+
+php:
+  - 7.2
+
+sudo: false
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+
+script:
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 704578a8-a115-478a-b0dc-f3dfb6f90288
+
+notifications:
+  email:
+    recipients:
+      - dqfan2012@gmail.com
+    on_success: always
+    on_failure: always

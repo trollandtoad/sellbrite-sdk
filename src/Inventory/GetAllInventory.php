@@ -40,7 +40,7 @@ class GetAllInventory extends Core
         $apiHeaders = $this->baseApiHeaders;
         $apiHeaders['headers']['Content-Type'] = 'application/json';
 
-        $uuid_pattern = '/^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i';
+        $uuid_pattern = '/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i';
 
         // Add the page query string if necessary
         if (is_null($page) === false && intval($page) > 0)
@@ -60,9 +60,12 @@ class GetAllInventory extends Core
         }
 
         // Only add the warehouse uuid if it matches the official UUID pattern
-        if (is_null($warehouse_uuid) === false && preg_match($uuid_pattern, $warehouse_uuid) === 1)
+        if (is_null($warehouse_uuid) === false)
         {
-            $apiHeaders['query']['warehouse_uuid'] = $warehouse_uuid;
+            if (preg_match($uuid_pattern, $warehouse_uuid))
+            {
+                $apiHeaders['query']['warehouse_uuid'] = $warehouse_uuid;
+            }
         }
 
         // Add the sku if the value isn't empty
