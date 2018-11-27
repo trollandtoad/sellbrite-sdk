@@ -60,12 +60,9 @@ class GetAllInventory extends Core
         }
 
         // Only add the warehouse uuid if it matches the official UUID pattern
-        if (is_null($warehouse_uuid) === false)
+        if (is_null($warehouse_uuid) === false && preg_match($uuid_pattern, $warehouse_uuid) === 1)
         {
-            if (preg_match($uuid_pattern, $warehouse_uuid))
-            {
-                $apiHeaders['query']['warehouse_uuid'] = $warehouse_uuid;
-            }
+            $apiHeaders['query']['warehouse_uuid'] = $warehouse_uuid;
         }
 
         // Add the sku if the value isn't empty
