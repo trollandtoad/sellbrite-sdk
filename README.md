@@ -17,6 +17,8 @@ Using the Guzzle HTTP Client to communicate with the Sellbrite API.
 
 **Finished**
 
+ - [x] Added Travis CI badge
+ - [x] Added Codecov badge
  - [x] Design Document
  - [x] Trello Board
  - [x] API Authentication
@@ -26,10 +28,10 @@ Using the Guzzle HTTP Client to communicate with the Sellbrite API.
 **In Progress**
 
  - [ ] Inventory API Endpoint (plus Unit Tests)
+ - [ ] Create Database Tables
+ - [ ] Proper Error Handling
 
 **To Do**
- - [ ] Create Database Tables
- - [ ] API Throttling
+
  - [ ] Shipments API Endpoint (plus Unit Tests)
  - [ ] Warehouses API Endpoint (plus Unit Tests)
- - [ ] Proper Error Handling
