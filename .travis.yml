@@ -21,7 +21,7 @@ after_success:
 notifications:
   email:
     recipients:
-      - dqfan2012@gmail.com
+      - sastidham@trollandtoad.com
       - ryans@trollandtoad.com
     on_success: always
     on_failure: always
