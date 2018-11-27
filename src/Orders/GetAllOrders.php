@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace TrollAndToad\Sellbrite\Orders;
 
-use Carbon\Carbon;
 use TrollAndToad\Sellbrite\Core\Core;
+use TrollAndToad\Sellbrite\Traits\Validatable\DateFields;
+use TrollAndToad\Sellbrite\Traits\Validatable\TextFields;
 
 class GetAllOrders extends Core
 {
+    use DateFields;
+    use TextFields;
+
     /**
      * @param integer $page Page number
      * @param integer $limit Number of results per page
@@ -54,31 +58,31 @@ class GetAllOrders extends Core
         }
 
         // Add the min_ordered_at datetime query string (ISO 8601)
-        if (is_null($min_ordered_at) === false && $this->validateDateField($min_ordered_at))
+        if (is_null($min_ordered_at) === false && $this->isDateValid($min_ordered_at))
         {
             $apiHeaders['query']['min_ordered_at'] = $min_ordered_at;
         }
 
-        // Add the maxn_ordered_at datetime query string (ISO 8601)
-        if (is_null($max_ordered_at) === false && $this->validateDateField($max_ordered_at))
+        // Add the max_ordered_at datetime query string (ISO 8601)
+        if (is_null($max_ordered_at) === false && $this->isDateValid($max_ordered_at))
         {
             $apiHeaders['query']['max_ordered_at'] = $max_ordered_at;
         }
 
         // Add the sb_status query string
-        if (is_null($sb_status) === false && $this->validateTextField($sb_status))
+        if (is_null($sb_status) === false && $this->isTextFieldValid($sb_status))
         {
             $apiHeaders['query']['sb_status'] = $sb_status;
         }
 
         // Add the sb_payment_status query string
-        if (is_null($sb_payment_status) === false && $this->validateTextField($sb_payment_status))
+        if (is_null($sb_payment_status) === false && $this->isTextFieldValid($sb_payment_status))
         {
             $apiHeaders['query']['sb_payment_status'] = $sb_payment_status;
         }
 
         // Add the shipment_status query string
-        if (is_null($shipment_status) === false && $this->validateTextField($shipment_status))
+        if (is_null($shipment_status) === false && $this->isTextFieldValid($shipment_status))
         {
             $apiHeaders['query']['shipment_status'] = $shipment_status;
         }
@@ -104,37 +108,4 @@ class GetAllOrders extends Core
                 throw new \Exception('Unknown error.');
         }
     } // End public function sendRequest
-
-    /**
-     * @return boolean
-     */
-    public function validateDateField(string $dateField)
-    {
-        try {
-            Carbon::parse($dateField);
-            return true;
-        } catch (\Exception $e)
-        {
-            return false;
-        }
-    } // public function validateDateField
-
-    /**
-     * @return boolean
-     */
-    public function validateTextField(string $textField)
-    {
-        switch ($textField)
-        {
-            case 'completed':
-            case 'canceled':
-            case 'open':
-            case 'all':
-            case 'partial':
-            case 'none':
-                return true;
-            default:
-                return false;
-        }
-    } // End public function validateField
 } // End class GetAllOrders
