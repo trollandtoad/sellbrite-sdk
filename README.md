@@ -8,20 +8,19 @@ Using the Guzzle HTTP Client to communicate with the Sellbrite API.
 
 **Finished**
 
-
+ - [x] Design Document
+ - [x] Trello Board
+ - [x] API Authentication
+ - [x] Orders API Endpoint (plus Unit Tests)
+ - [x] Channels API Endpoint (plus Unit Tests)
 
 **In Progress**
 
-
+ - [ ] Inventory API Endpoint (plus Unit Tests)
 
 **To Do**
-
  - [ ] Create Database Tables
- - [ ] API Authentication
  - [ ] API Throttling
- - [ ] Orders API Endpoint (plus Unit Tests)
- - [ ] Inventory API Endpoint (plus Unit Tests)
  - [ ] Shipments API Endpoint (plus Unit Tests)
- - [ ] Channels API Endpoint (plus Unit Tests)
  - [ ] Warehouses API Endpoint (plus Unit Tests)
  - [ ] Proper Error Handling
