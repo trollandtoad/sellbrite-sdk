@@ -1,6 +1,6 @@
 {
     "name": "dqfan2012/sellbrite-sdk",
-    "description": "empty description",
+    "description": "A PHP library that wraps the Guzzle HTTP client and interacts with the Sellbrite API",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -21,7 +21,6 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "vlucas/phpdotenv": "^2.5",
         "carbondate/carbon": "^1.33"
     },
     "require-dev": {
