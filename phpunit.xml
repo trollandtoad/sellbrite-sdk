@@ -28,6 +28,10 @@
         <testsuite name="Warehouses API Tests">
             <directory suffix="Test.php">./tests/Warehouses</directory>
         </testsuite>
+
+        <!--<testsuite name="Products API Tests">
+            <directory suffix="Test.php">./tests/Products</directory>
+        </testsuite>-->
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
