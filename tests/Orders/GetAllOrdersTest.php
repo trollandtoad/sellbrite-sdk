@@ -868,7 +868,7 @@ class GetAllOrdersTest extends TestCase
         // cotaining an error
         $mockClient->shouldReceive('request')->andReturns(
             new Response(
-                401,
+                400,
                 [ 'Content-Type' => 'text/html' ],
                 "This is an the default error."
             )
