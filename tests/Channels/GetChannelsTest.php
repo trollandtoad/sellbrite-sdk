@@ -11,7 +11,7 @@ use TrollAndToad\Sellbrite\Channels\GetChannels;
 
 class GetChannelsTest extends TestCase
 {
-    public function testGetChannelsApiRequest()
+    public function testChannelsApiRequest()
     {
         // Get the stored credentials
         $accountToken = 'am2902ngt3Nn';
@@ -61,9 +61,9 @@ class GetChannelsTest extends TestCase
                 ]
             ])
         );
-    } // End public function testGetChannelsApiRequest
+    } // End public function testChannelsApiRequest
 
-    public function testBadCredentialsForChannelsApiRequestShouldReturnAnException()
+    public function testChannelsApiBadCredentialsRequestShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
@@ -90,7 +90,7 @@ class GetChannelsTest extends TestCase
 
         // Send the request and store the response
         $response = $getChannels->sendRequest();
-    } // End public function testBadCredentialsForWarehouseApiRequestShouldReturnAnException
+    } // End public function testChannelsApiBadCredentialsRequestShouldReturnAnException
 
     public function testChannelsApiRequestShouldReturnDefaultException()
     {

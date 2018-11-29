@@ -506,7 +506,7 @@ class GetAllInventoryTest extends TestCase
         );
     } // End public function testGetAllInventoryTestingWithUpdatedDates
 
-    public function testBadCredentialsForGetAllInventoryApiRequestShouldReturnAnException()
+    public function testGetAllInventoryApiBadCredentialsRequestShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
@@ -552,9 +552,9 @@ class GetAllInventoryTest extends TestCase
             $updated_at_min,
             $updated_at_max
         );
-    } // End public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnAnException
+    } // End public function testGetAllInventoryApiBadCredentialsRequestShouldReturnAnException
 
-    public function testGetAllOrdersApiRequestShouldReturnDefaultException()
+    public function testGetAllInventoryApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
         $accountToken = 'M09823hgan';
@@ -599,5 +599,5 @@ class GetAllInventoryTest extends TestCase
             $updated_at_min,
             $updated_at_max
         );
-    } // End public function testGetAllOrdersApiRequestShouldReturnDefaultException
+    } // End public function testGetAllInventoryApiRequestShouldReturnDefaultException
 } // End class GetAllInventoryTest

@@ -11,7 +11,7 @@ use TrollAndToad\Sellbrite\Warehouses\GetWarehouses;
 
 class GetWarehousesTest extends TestCase
 {
-    public function testGetWarehouseApiRequest()
+    public function testWarehouseApiGetWarehousesRequest()
     {
         // Get the stored credentials
         $accountToken = 'am2902ngt3Nn';
@@ -67,9 +67,9 @@ class GetWarehousesTest extends TestCase
                 ]
             ])
         );
-    } // End public function testGetWarehouseApiRequest
+    } // End public function testWarehouseApiGetWarehousesRequest
 
-    public function testBadCredentialsForWarehouseApiRequestShouldReturnAnException()
+    public function testWarehouseApiBadCredentialsForWarehouseApiRequestShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
@@ -96,7 +96,7 @@ class GetWarehousesTest extends TestCase
 
         // Send the request and store the response
         $json = $getWarehouses->sendRequest();
-    } // End public function testBadCredentialsForWarehouseApiRequestShouldReturnAnException
+    } // End public function testWarehouseApiBadCredentialsForWarehouseApiRequestShouldReturnAnException
 
     public function testWarehouseApiRequestShouldReturnDefaultException()
     {

@@ -7,7 +7,7 @@
     </a>
 </p>
 
-## Sellbrite SDK in php
+## Sellbrite SDK
 
 This will probably become a composer package once it's finished.
 
@@ -25,12 +25,8 @@ Using the Guzzle HTTP Client to communicate with the Sellbrite API.
  - [x] Orders API Endpoint (plus Unit Tests)
  - [x] Channels API Endpoint (plus Unit Tests)
  - [x] Inventory API Endpoint (plus Unit Tests)
+ - [x] Shipments API Endpoint (plus Unit Tests)
 
 **In Progress**
 
- - [ ] Shipments API Endpoint (plus Unit Tests)
-
-**To Do**
-
- - [ ] Create Database Tables
  - [ ] Warehouses API Endpoint (plus Unit Tests)

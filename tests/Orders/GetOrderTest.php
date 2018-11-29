@@ -165,11 +165,11 @@ class GetOrderTest extends TestCase
         );
     } // End public function testGetOrderApiRequest
 
-    public function testBadCredentialsForOrdersApiWithoutSBOrderSequenceNumber()
+    public function testGetOrderApiWithoutSbOrderSequenceNumber()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = 'M92hta0jasdg90';
+        $secretKey    = 'N9832nmg93';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
@@ -195,9 +195,9 @@ class GetOrderTest extends TestCase
         $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
 
         $this->assertEquals($json, "401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
-    } // End public function testBadCredentialsForOrdersApiWithoutSBOrderSequenceNumber
+    } // End public function testGetOrderApiWithoutSbOrderSequenceNumber
 
-    public function testBadCredentialsForOrdersApiRequestShouldReturnAnException()
+    public function testGetOrderApiBadAuthShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
@@ -226,9 +226,9 @@ class GetOrderTest extends TestCase
 
         // Send the request and store the response
         $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
-    } // End public function testBadCredentialsForOrdersApiRequestShouldReturnAnException
+    } // End public function testGetOrderApiBadAuthShouldReturnAnException
 
-    public function testOrdersApiRequestShouldReturnDefaultException()
+    public function testGetOrderApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
         $accountToken = 'M09243hgm';
@@ -257,5 +257,5 @@ class GetOrderTest extends TestCase
 
         // Send the request and store the response
         $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
-    } // End public function testOrdersApiRequestShouldReturnDefaultException
+    } // End public function testGetOrderApiRequestShouldReturnDefaultException
 } // End class GetChannelsTest

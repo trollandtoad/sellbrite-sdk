@@ -826,7 +826,7 @@ class GetAllOrdersTest extends TestCase
         );
     } // End public function testGetAllOrdersTestingInvalidStatus
 
-    public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnAnException()
+    public function testGetAllOrdersBadCredentialsForGetAllOrdersApiRequestShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
