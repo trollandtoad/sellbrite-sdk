@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace TrollAndToad\Sellbrite\Orders;
 
-use Carbon\Carbon;
 use TrollAndToad\Sellbrite\Core\Core;
 
 class GetOrder extends Core

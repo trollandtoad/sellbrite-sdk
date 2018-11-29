@@ -69,7 +69,7 @@ class GetWarehousesTest extends TestCase
         );
     } // End public function testWarehouseApiGetWarehousesRequest
 
-    public function testWarehouseApiBadCredentialsForWarehouseApiRequestShouldReturnAnException()
+    public function testWarehouseApiBadCredentialsShouldReturnAnException()
     {
         // Get the stored credentials
         $accountToken = '';
@@ -96,7 +96,7 @@ class GetWarehousesTest extends TestCase
 
         // Send the request and store the response
         $json = $getWarehouses->sendRequest();
-    } // End public function testWarehouseApiBadCredentialsForWarehouseApiRequestShouldReturnAnException
+    } // End public function testWarehouseApiBadCredentialsShouldReturnAnException
 
     public function testWarehouseApiRequestShouldReturnDefaultException()
     {
