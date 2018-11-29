@@ -3,14 +3,10 @@
 declare(strict_types=1);
 
 namespace TrollAndToad\Sellbrite\Inventory;
-
+// Expect an exception from the request
+$this->expectException(\Exception::class);
 use TrollAndToad\Sellbrite\Core\Core;
 
-/**
- * This POST endpoint creates an inventory record only if it does not exist. If the inventory
- * does exist it will error with an HTTP CONFLICT error. If you would like to ignore errors
- * and upsert inventories see the PUT /inventories endpoint.
- */
 class PutInventory extends Core
 {
     /**
@@ -54,4 +50,4 @@ class PutInventory extends Core
                 throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
-} // End class PostInventory
+} // End class PutInventory

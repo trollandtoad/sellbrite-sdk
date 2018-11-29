@@ -77,4 +77,130 @@ class PutInventoryTest extends TestCase
 
         $this->assertEquals($responseStr, 'Request received');
     } // End public function testPutInventoryApiCallSuccessfullyUpsertItems
-} // End class PostInventoryTest
+
+    public function testPutInventoryApiCallBadAuthentication()
+    {
+        // Get the stored credentials
+        $accountToken = '';
+        $secretKey    = '';
+
+        // Create a mock client object
+        $mockClient = \Mockery::mock(ClientInterface::class);
+
+        // The mock client should receive a request call and it should return at PSR-7 Response object
+        // cotaining JSON
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
+                401,
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
+
+        $inventoryArray = [
+            'inventory' => [
+                [
+                    'sku' => 'L11M311354',
+                    'description' => 'This is a description.',
+                    'warehouse_uuid' => 'a8431234-9e24-479c-abf4-1234d5861234',
+                    'on_hand' => 1,
+                    'available' => 1,
+                    'bin_location' => 'AM-33-1MNZ2'
+                ]
+            ]
+        ];
+
+        // Instantiate a new PutInventory API Object
+        $putInventory = new PutInventory($accountToken, $secretKey, $mockClient);
+
+        // Expect an exception from the request
+        $this->expectException(\Exception::class);
+
+        // Send the request
+        $response = $putInventory->sendRequest($inventoryArray);
+    } // End public function testPutInventoryApiCallBadAuthentication
+
+    public function testPutInventoryApiCallBadRequestDefaultError()
+    {
+        // Get the stored credentials
+        $accountToken = 'M2930ng';
+        $secretKey    = 'MNzmcme982n';
+
+        // Create a mock client object
+        $mockClient = \Mockery::mock(ClientInterface::class);
+
+        // The mock client should receive a request call and it should return at PSR-7 Response object
+        // cotaining JSON
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
+                400,
+                [ 'Content-Type' => 'application/json' ],
+                'This is the default error.'
+            )
+        );
+
+        $inventoryArray = [
+            'inventory' => [
+                [
+                    'sku' => 'L11M311354',
+                    'description' => 'This is a description.',
+                    'warehouse_uuid' => 'a8431234-9e24-479c-abf4-1234d5861234',
+                    'on_hand' => 1,
+                    'available' => 1,
+                    'bin_location' => 'AM-33-1MNZ2'
+                ]
+            ]
+        ];
+
+        // Instantiate a new PutInventory API Object
+        $putInventory = new PutInventory($accountToken, $secretKey, $mockClient);
+
+        // Expect an exception from the request
+        $this->expectException(\Exception::class);
+
+        // Send the request
+        $response = $putInventory->sendRequest($inventoryArray);
+    } // End public function testPutInventoryApiCallBadRequestDefaultError
+
+    public function testPutInventoryApiCallBadWarehouseUuid()
+    {
+        // Get the stored credentials
+        $accountToken = 'am2902ngt3Nn';
+        $secretKey    = 'happy28bananas';
+
+        // Create a mock client object
+        $mockClient = \Mockery::mock(ClientInterface::class);
+
+        // The mock client should receive a request call and it should return at PSR-7 Response object
+        // cotaining JSON
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
+                404,
+                [ 'Content-Type' => 'application/json' ],
+                '{ "error": "Warehouse not found" }'
+            )
+        );
+
+        $inventoryArray = [
+            'inventory' => [
+                [
+                    'sku' => 'L11M311354',
+                    'description' => 'This is a description.',
+                    'warehouse_uuid' => 'a843134-9e24-479c-abf4-1234d5861234',
+                    'on_hand' => 1,
+                    'available' => 1,
+                    'bin_location' => 'AM-33-1MNZ2'
+                ]
+            ]
+        ];
+
+        // Instantiate a new PutInventory API Object
+        $putInventory = new PutInventory($accountToken, $secretKey, $mockClient);
+
+        // Expect an exception from the request
+        $this->expectException(\Exception::class);
+
+        // Send the request
+        $response = $putInventory->sendRequest($inventoryArray);
+    } // End public function testPutInventoryApiCallBadWarehouseUuid
+} // End class PutInventoryTest
