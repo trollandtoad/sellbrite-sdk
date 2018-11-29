@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 namespace TrollAndToad\Sellbrite\Inventory;
-// Expect an exception from the request
-$this->expectException(\Exception::class);
+
 use TrollAndToad\Sellbrite\Core\Core;
 
 class PutInventory extends Core
