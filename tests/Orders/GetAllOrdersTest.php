@@ -837,12 +837,13 @@ class GetAllOrdersTest extends TestCase
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 401,
-                [ 'Content-Type' => 'application/json', 'Total-Pages' => 0 ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
 
         // Instantiate a new GetChannels API Object
         $getAllOrders = new GetAllOrders($accountToken, $secretKey, $mockClient);
@@ -854,23 +855,24 @@ class GetAllOrdersTest extends TestCase
         $response = $getAllOrders->sendRequest();
     } // End public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnAnException
 
-    public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnDefaultException()
+    public function testGetAllOrdersApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = '*()namgast723h';
+        $secretKey    = 'N)Sdng0q3ht4nq81';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
-                400,
-                [ 'Content-Type' => 'application/json', 'Total-Pages' => 0 ],
-                "You couldn't be authenticated")
-            );
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
+                401,
+                [ 'Content-Type' => 'text/html' ],
+                "This is an the default error."
+            )
+        );
 
         // Instantiate a new GetChannels API Object
         $getAllOrders = new GetAllOrders($accountToken, $secretKey, $mockClient);
@@ -880,5 +882,5 @@ class GetAllOrdersTest extends TestCase
 
         // Send the request and store the response
         $response = $getAllOrders->sendRequest();
-    } // End public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnDefaultException
+    } // End public function testGetAllOrdersApiRequestShouldReturnDefaultException
 } // End class GetAllOrdersTest

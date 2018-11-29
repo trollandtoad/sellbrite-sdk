@@ -110,10 +110,10 @@ class GetAllInventory extends Core
                 return $response;
                 break;
             case 401:
-                throw new \Exception("401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
+                throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
                 break;
             default:
-                throw new \Exception('Unknown error.');
+                throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
 } // End class GetAllInventory

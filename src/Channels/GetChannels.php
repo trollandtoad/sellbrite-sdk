@@ -32,9 +32,9 @@ class GetChannels extends Core
             case 200:
                 return (string) $response->getBody();
             case 401:
-                throw new \Exception("401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
+                throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
             default:
-                throw new \Exception('Unknown error.');
+                throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
 } // End class GetWarehouses

@@ -517,12 +517,13 @@ class GetAllInventoryTest extends TestCase
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 401,
-                [ 'Content-Type' => 'application/json', 'Total-Pages' => 0 ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
 
         // Instantiate a new GetAllInventory API Object
         $getAllInventory = new GetAllInventory($accountToken, $secretKey, $mockClient);
@@ -553,23 +554,24 @@ class GetAllInventoryTest extends TestCase
         );
     } // End public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnAnException
 
-    public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnDefaultException()
+    public function testGetAllOrdersApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = 'M09823hgan';
+        $secretKey    = 'M89023nga301';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 400,
-                [ 'Content-Type' => 'application/json', 'Total-Pages' => 0 ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "This is the default error."
+            )
+        );
 
         // Instantiate a new GetAllInventory API Object
         $getAllInventory = new GetAllInventory($accountToken, $secretKey, $mockClient);
@@ -597,5 +599,5 @@ class GetAllInventoryTest extends TestCase
             $updated_at_min,
             $updated_at_max
         );
-    } // End public function testBadCredentialsForGetAllOrdersApiRequestShouldReturnDefaultException
+    } // End public function testGetAllOrdersApiRequestShouldReturnDefaultException
 } // End class GetAllInventoryTest

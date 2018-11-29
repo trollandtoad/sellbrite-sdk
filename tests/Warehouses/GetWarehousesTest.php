@@ -80,12 +80,13 @@ class GetWarehousesTest extends TestCase
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 401,
-                [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
 
         // Instantiate a new GetWarehouses API Object
         $getWarehouses = new GetWarehouses($accountToken, $secretKey, $mockClient);
@@ -97,11 +98,11 @@ class GetWarehousesTest extends TestCase
         $json = $getWarehouses->sendRequest();
     } // End public function testBadCredentialsForWarehouseApiRequestShouldReturnAnException
 
-    public function testBadCredentialsForWarehouseApiRequestShouldReturnDefaultException()
+    public function testWarehouseApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = 'M9023gna';
+        $secretKey    = '239320hag802h328';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
@@ -112,8 +113,9 @@ class GetWarehousesTest extends TestCase
             ->andReturns(new \GuzzleHttp\Psr7\Response(
                 400,
                 [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                "This is the default error."
+            )
+        );
 
         // Instantiate a new GetWarehouses API Object
         $getWarehouses = new GetWarehouses($accountToken, $secretKey, $mockClient);
@@ -123,5 +125,5 @@ class GetWarehousesTest extends TestCase
 
         // Send the request and store the response
         $jsonResponse = $getWarehouses->sendRequest();
-    } // End public function testBadCredentialsForWarehouseApiRequestShouldReturnDefaultException
+    } // End public function testWarehouseApiRequestShouldReturnDefaultException
 } // End class GetWarehouseTest

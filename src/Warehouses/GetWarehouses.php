@@ -30,10 +30,10 @@ class GetWarehouses extends Core
                 return (string) $response->getBody();
                 break;
             case 401:
-                throw new \Exception("401 Unauthorized. You couldn't be authenticated because bad credentials were supplied.");
+                throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
                 break;
             default:
-                throw new \Exception('Unknown error.');
+                throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
 } // End class GetWarehouses

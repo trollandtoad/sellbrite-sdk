@@ -15,11 +15,6 @@ use TrollAndToad\Sellbrite\Interfaces\ApiCallInterface;
 abstract class Core implements ApiCallInterface
 {
     /**
-     * @var string $apiEndpoint
-     */
-    protected $apiEndpoint;
-
-    /**
      * @var array
      */
     protected $baseApiHeaders;

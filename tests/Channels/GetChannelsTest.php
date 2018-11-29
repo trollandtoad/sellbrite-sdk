@@ -74,12 +74,13 @@ class GetChannelsTest extends TestCase
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 401,
-                [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
 
         // Instantiate a new GetChannels API Object
         $getChannels = new GetChannels($accountToken, $secretKey, $mockClient);
@@ -88,16 +89,14 @@ class GetChannelsTest extends TestCase
         $this->expectException(\Exception::class);
 
         // Send the request and store the response
-        $jsonResponse = $getChannels->sendRequest();
-
-        $this->assertEquals($json, "401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
+        $response = $getChannels->sendRequest();
     } // End public function testBadCredentialsForWarehouseApiRequestShouldReturnAnException
 
-    public function testBadCredentialsForChannelsApiRequestShouldReturnDefaultException()
+    public function testChannelsApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = 'M023hga08932476q';
+        $secretKey    = 'N*h94hn1n58';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
@@ -108,8 +107,9 @@ class GetChannelsTest extends TestCase
             ->andReturns(new \GuzzleHttp\Psr7\Response(
                 400,
                 [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                "This is the default error."
+            )
+        );
 
         // Instantiate a new GetChannels API Object
         $getChannels = new GetChannels($accountToken, $secretKey, $mockClient);

@@ -208,12 +208,13 @@ class GetOrderTest extends TestCase
 
         // The mock client should receive a request call and it should return at PSR-7 Response object
         // cotaining an error
-        $mockClient->shouldReceive('request')
-            ->andReturns(new \GuzzleHttp\Psr7\Response(
+        $mockClient->shouldReceive('request')->andReturns(
+            new Response(
                 401,
-                [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                [ 'Content-Type' => 'text/html' ],
+                "HTTP Basic: Access denied."
+            )
+        );
 
         // Instantiate a new GetOrder API Object
         $getOrder = new GetOrder($accountToken, $secretKey, $mockClient);
@@ -225,15 +226,13 @@ class GetOrderTest extends TestCase
 
         // Send the request and store the response
         $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
-
-        $this->assertEquals($json, "401 Unauthorized. You couldn't be authenticated because bad credentials was supplied.");
     } // End public function testBadCredentialsForOrdersApiRequestShouldReturnAnException
 
-    public function testBadCredentialsForOrdersApiRequestShouldReturnDefaultException()
+    public function testOrdersApiRequestShouldReturnDefaultException()
     {
         // Get the stored credentials
-        $accountToken = '';
-        $secretKey    = '';
+        $accountToken = 'M09243hgm';
+        $secretKey    = '230gnam39';
 
         // Create a mock client object
         $mockClient = \Mockery::mock(ClientInterface::class);
@@ -244,8 +243,9 @@ class GetOrderTest extends TestCase
             ->andReturns(new \GuzzleHttp\Psr7\Response(
                 400,
                 [ 'Content-Type' => 'application/json' ],
-                "You couldn't be authenticated")
-            );
+                "This is the default error."
+            )
+        );
 
         // Instantiate a new GetOrder API Object
         $getOrder = new GetOrder($accountToken, $secretKey, $mockClient);
@@ -257,5 +257,5 @@ class GetOrderTest extends TestCase
 
         // Send the request and store the response
         $jsonResponse = $getOrder->sendRequest($sb_order_sequence);
-    } // End public function testBadCredentialsForOrdersApiRequestShouldReturnDefaultException
+    } // End public function testOrdersApiRequestShouldReturnDefaultException
 } // End class GetChannelsTest
