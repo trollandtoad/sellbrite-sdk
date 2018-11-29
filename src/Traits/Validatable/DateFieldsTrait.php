@@ -1,6 +1,6 @@
 <?php
 
-namespace TrollAndToad\Sellbrite\Traits\Validatable;
+namespace dqfan2012\Sellbrite\Traits\Validatable;
 
 use Carbon\Carbon;
 

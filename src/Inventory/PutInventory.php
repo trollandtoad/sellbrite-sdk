@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Inventory;
+namespace dqfan2012\Sellbrite\Inventory;
 
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 class PutInventory extends Core
 {

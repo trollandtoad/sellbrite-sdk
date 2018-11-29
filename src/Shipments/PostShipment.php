@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Shipments;
+namespace dqfan2012\Sellbrite\Shipments;
 
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 class PostShipment extends Core
 {

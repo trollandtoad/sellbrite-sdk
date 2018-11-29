@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Inventory;
+namespace dqfan2012\Sellbrite\Inventory;
 
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 /**
  * This POST endpoint creates an inventory record only if it does not exist. If the inventory

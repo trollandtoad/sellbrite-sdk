@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Test\Channels;
+namespace dqfan2012\Sellbrite\Test\Channels;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TrollAndToad\Sellbrite\Channels\GetChannels;
+use dqfan2012\Sellbrite\Channels\GetChannels;
 
 class GetChannelsTest extends TestCase
 {

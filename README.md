@@ -9,24 +9,14 @@
 
 ## Sellbrite SDK
 
-This will probably become a composer package once it's finished.
+This is a PHP library that wraps the Guzzle HTTP Client to interact with the Sellbrite API.
 
-Using the Guzzle HTTP Client to communicate with the Sellbrite API.
+## Installation
 
-### Tasks
+```
+$ composer require dqfan2012/sellbrite-sdk
+```
 
-**Finished**
+## Report Bugs
 
- - [x] Added Travis CI badge
- - [x] Added Codecov badge
- - [x] Design Document
- - [x] Trello Board
- - [x] API Authentication
- - [x] Orders API Endpoint (plus Unit Tests)
- - [x] Channels API Endpoint (plus Unit Tests)
- - [x] Inventory API Endpoint (plus Unit Tests)
- - [x] Shipments API Endpoint (plus Unit Tests)
-
-**In Progress**
-
- - [ ] Warehouses API Endpoint (plus Unit Tests)
+Please report bugs to dqfan2012@gmail or sastidham@trollandtoad.com

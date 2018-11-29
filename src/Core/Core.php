@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Core;
+namespace dqfan2012\Sellbrite\Core;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
-use TrollAndToad\Sellbrite\Interfaces\ApiCallInterface;
+use dqfan2012\Sellbrite\Interfaces\ApiCallInterface;
 
 /**
  * @implements ApiCallInterface

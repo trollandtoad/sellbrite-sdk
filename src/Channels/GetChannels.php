@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Channels;
+namespace dqfan2012\Sellbrite\Channels;
 
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 class GetChannels extends Core
 {

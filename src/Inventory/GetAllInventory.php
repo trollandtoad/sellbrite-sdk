@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Inventory;
+namespace dqfan2012\Sellbrite\Inventory;
 
-use TrollAndToad\Sellbrite\Core\Core;
-use TrollAndToad\Sellbrite\Traits\Validatable\DateFieldsTrait;
+use dqfan2012\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Traits\Validatable\DateFieldsTrait;
 
 class GetAllInventory extends Core
 {

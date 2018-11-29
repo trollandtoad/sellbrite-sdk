@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Test\Products;
+namespace dqfan2012\Sellbrite\Test\Products;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TrollAndToad\Sellbrite\Products\PostProduct;
+use dqfan2012\Sellbrite\Products\PostProduct;
 
 class PostProductTest extends TestCase
 {

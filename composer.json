@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "TrollAndToad\\Sellbrite\\" : "src/"
+            "dqfan2012\\Sellbrite\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TrollAndToad\\Sellbrite\\Test\\": "tests/"
+            "dqfan2012\\Sellbrite\\Test\\": "tests/"
         }
     },
     "require": {

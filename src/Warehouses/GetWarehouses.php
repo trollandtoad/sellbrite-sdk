@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Warehouses;
+namespace dqfan2012\Sellbrite\Warehouses;
 
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 class GetWarehouses extends Core
 {

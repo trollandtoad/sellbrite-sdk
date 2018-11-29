@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Interfaces;
+namespace dqfan2012\Sellbrite\Interfaces;
 
 interface ApiCallInterface
 {

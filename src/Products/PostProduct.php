@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Products;
+namespace dqfan2012\Sellbrite\Products;
 
 use Carbon\Carbon;
-use TrollAndToad\Sellbrite\Core\Core;
+use dqfan2012\Sellbrite\Core\Core;
 
 /**
  * The Product API isn't documented enough. Will not use until it is.

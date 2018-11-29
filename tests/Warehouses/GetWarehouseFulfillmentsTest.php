@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TrollAndToad\Sellbrite\Test\Warehouses;
+namespace dqfan2012\Sellbrite\Test\Warehouses;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TrollAndToad\Sellbrite\Warehouses\GetWarehouseFulfillments;
+use dqfan2012\Sellbrite\Warehouses\GetWarehouseFulfillments;
 
 class GetWarehouseFulfillmentsTest extends TestCase
 {
