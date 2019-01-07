@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace dqfan2012\Sellbrite\Products;
 
-use Carbon\Carbon;
 use dqfan2012\Sellbrite\Core\Core;
 
 /**

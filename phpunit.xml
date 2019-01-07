@@ -32,13 +32,16 @@
         <testsuite name="Products API Tests">
             <directory suffix="Test.php">./tests/Products</directory>
         </testsuite>
+
+        <testsuite name="Variation Groups API Tests">
+            <directory suffix="Test.php">./tests/VariationGroups</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
             <exclude>
                 <directory suffix=".php">./src/Interfaces</directory>
-                <!--<directory suffix=".php">./src/Products</directory>-->
             </exclude>
         </whitelist>
     </filter>

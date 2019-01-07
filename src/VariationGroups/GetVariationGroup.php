@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Products;
+namespace dqfan2012\Sellbrite\VariationGroups;
 
 use dqfan2012\Sellbrite\Core\Core;
 
 /**
  * The Product API isn't documented enough. Will not use until it is.
  */
-class GetProduct extends Core
+class GetVariationGroup extends Core
 {
     /**
      * @param integer $page Page number
@@ -22,7 +22,7 @@ class GetProduct extends Core
         array $skuArr = []
     ) {
         // Build the API endpoint
-        $url = self::BASE_URI . 'products';
+        $url = self::BASE_URI . 'variation_groups';
 
         // Build the API headers
         $apiHeaders = $this->baseApiHeaders;
