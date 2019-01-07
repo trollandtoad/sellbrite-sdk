@@ -18,4 +18,4 @@ trait DateFieldsTrait
             return false;
         }
     } // function validateDateField
-}
+} // End trait DateFieldsTrait

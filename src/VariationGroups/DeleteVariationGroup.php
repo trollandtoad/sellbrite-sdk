@@ -9,48 +9,27 @@ use dqfan2012\Sellbrite\Core\Core;
 /**
  * The Product API isn't documented enough. Will not use until it is.
  */
-class GetVariationGroup extends Core
+class DeleteVariationGroup extends Core
 {
     /**
      * @param integer $page Page number
      * @param integer $limit Number of results per page
      * @param array   $skuArr An array of SKUs
      */
-    public function sendRequest(
-        int $page = null,
-        int $limit = null,
-        array $skuArr = []
-    ) {
+    public function sendRequest(string $sku = null)
+    {
+        if (is_null($sku) === true || empty($sku) === true || is_string($sku) === false)
+            throw new \Exception('You failed to supply a SKU.');
+
         // Build the API endpoint
-        $url = self::BASE_URI . 'variation_groups';
+        $url = self::BASE_URI . 'variation_groups/' . $sku;
 
         // Build the API headers
         $apiHeaders = $this->baseApiHeaders;
         $apiHeaders['headers']['Content-Type'] = 'application/json';
 
-        // Add the page query string if necessary
-        if (is_null($page) === false && intval($page) > 0)
-        {
-            $apiHeaders['query']['page'] = $page;
-        }
-
-        // Add the limit query string is necessary. NOTE: The API limits returned order count
-        // to 100. The API will -not- allow more to be fetched by a single request.
-        if (is_null($limit) === false)
-        {
-            if (intval($limit) > 100) {
-                $apiHeaders['query']['limit'] = 100;
-            } else {
-                $apiHeaders['query']['limit'] = $limit;
-            }
-        }
-
-        if (is_array($skuArr) && empty($skuArr) === false) {
-            $apiHeaders['query']['skus'] = $skuArr;
-        }
-
         // Send the HTTP request to the API endpoint and get the response stream
-        $response = $this->httpClient->request('GET', $url, $apiHeaders);
+        $response = $this->httpClient->request('DELETE', $url, $apiHeaders);
 
         // Get the status code returned with the response
         $statusCode = $response->getStatusCode();
@@ -61,7 +40,7 @@ class GetVariationGroup extends Core
             case 200:
                 // Returning the PSR7 response object because of the Total-Pages header. Will handle the
                 // total pages logic outside of this class
-                return $response;
+                return 'Succesfully deleted a variation group.';
                 break;
             case 401:
                 throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
@@ -70,4 +49,4 @@ class GetVariationGroup extends Core
                 throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
-} // End class GetVariationGroup
+} // End class DeleteVariationGroup

@@ -9,7 +9,7 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use dqfan2012\Sellbrite\VariationGroups\GetVariationGroup;
 
-class GetProductTest extends TestCase
+class GetVariationGroupTest extends TestCase
 {
     public function testGetVariationGroupsSuccessfullyGetVariationGroups()
     {
@@ -212,4 +212,4 @@ class GetProductTest extends TestCase
         // Send the request and get the response object
         $response = $getVariationGroup->sendRequest($page, $limit, $skuArr);
     } // End public function testGetVariationThrowDefaultException
-} // End class GetProductTest
+} // End class GetVariationGroupTest

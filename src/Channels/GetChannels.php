@@ -37,4 +37,4 @@ class GetChannels extends Core
                 throw new \Exception('This is the default error.');
         }
     } // End public function sendRequest
-} // End class GetWarehouses
+} // End class GetChannels

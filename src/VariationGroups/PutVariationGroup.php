@@ -12,9 +12,12 @@ use dqfan2012\Sellbrite\Core\Core;
 class PutVariationGroup extends Core
 {
     /**
-     * @param integer $page Page number
-     * @param integer $limit Number of results per page
-     * @param array   $skuArr An array of SKUs
+     * @param integer $page Page number - required
+     * @param integer $limit Number of results per page - required
+     * @param array   $skuArr An array of SKUs - required
+     * @param array   $variationAttr An array of attributes that child SKUs vary on - required
+     * @param string  $description Group description
+     * @param array   $images Array of image URLs
      */
     public function sendRequest(
         string $sku = null,

@@ -418,4 +418,4 @@ class PutVariationGroupTest extends TestCase
             $images
         );
     } // End public function testPutVariationGroupsThrowDefaultException
-} // End class GetProductTest
+} // End class PutVariationGroupTest

@@ -24,4 +24,4 @@ trait TextFieldsTrait
                 return false;
         }
     } // End public function validateField
-}
+} // End trait TextFieldsTrait
