@@ -17,10 +17,6 @@ This is a PHP library that wraps the Guzzle HTTP Client to interact with the Sel
 $ composer require dqfan2012/sellbrite-sdk
 ```
 
-## Report Bugs
-
-Please report bugs to dqfan2012@gmail or sastidham@trollandtoad.com
-
 ## Covered API Calls
 
 **Channels**
@@ -63,3 +59,7 @@ Please report bugs to dqfan2012@gmail or sastidham@trollandtoad.com
  - [x] PUT **/variation_groups/{sku}** - 7 Tests
 
 **Total** - 87 Unit Tests
+
+## Report Bugs
+
+Please report bugs to dqfan2012@gmail or sastidham@trollandtoad.com
