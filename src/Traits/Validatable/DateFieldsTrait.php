@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace dqfan2012\Sellbrite\Traits\Validatable;
 
 use Carbon\Carbon;

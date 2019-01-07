@@ -18,10 +18,10 @@ class PostProduct extends Core
      */
     public function sendRequest(string $sku = null, array $productInfoArr = null)
     {
-        if (is_null($sku) === true || empty($sku) === true)
+        if (is_null($sku) === true || empty($sku) === true || is_string($sku) === false)
             throw new \Exception('You failed to supply a SKU.');
 
-        if (is_null($productInfoArr) === true)
+        if (is_null($productInfoArr) === true || (is_array($productInfoArr) && empty($productInfoArr)))
             throw new \Exception('You failed to supply a product information array.');
 
         // Build the API endpoint
@@ -35,27 +35,21 @@ class PostProduct extends Core
         $apiHeaders['body'] = json_encode($productInfoArr);
 
         // Send the HTTP request to the API endpoint and get the response stream
-        //$response = $this->httpClient->request('POST', $url, $apiHeaders);
+        $response = $this->httpClient->request('POST', $url, $apiHeaders);
 
         // Get the status code returned with the response
-        //$statusCode = $response->getStatusCode();
-
-        // Get the response body
-        //$messageArr = json_decode((string) $response->getBody(), true);
+        $statusCode = $response->getStatusCode();
 
         // Check status code for success or failure
-        // switch ($statusCode)
-        // {
-        //     case 200:
-        //         return $messageArr['body'];
-        //     case 401:
-        //         throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
-        //         break;
-        //     case 404:
-        //         throw new \Exception('404 Not Found - ' . $messageArr['error']);
-        //         break;
-        //     default:
-        //         throw new \Exception('This is the default error.');
-        // }
+        switch ($statusCode)
+        {
+            case 200:
+                return $response;
+            case 401:
+                throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
+                break;
+            default:
+                throw new \Exception('This is the default error.');
+        }
     } // End public function sendRequest
 } // End class PostProduct
