@@ -48,7 +48,7 @@ class GetProductTest extends TestCase
         $limit = 100;
         $skuArr = ['64_ctrl'];
 
-        // Create a new instance of DeleteProduct
+        // Create a new instance of GetVariationGroup
         $getVariationGroup = new GetVariationGroup($accountToken, $secretKey, $mockClient);
 
         // Send the request and get the response object
@@ -116,7 +116,7 @@ class GetProductTest extends TestCase
         $limit = 555;
         $skuArr = ['64_ctrl'];
 
-        // Create a new instance of DeleteProduct
+        // Create a new instance of GetVariationGroup
         $getVariationGroup = new GetVariationGroup($accountToken, $secretKey, $mockClient);
 
         // Send the request and get the response object
@@ -145,7 +145,7 @@ class GetProductTest extends TestCase
                 ]
             ])
         );
-    } // End public function testGetVariationGroupsSuccessfullyGetVariationGroups
+    } // End public function testGetVariationGroupsTestMaxLimit
 
     public function testGetVariationBadCredentialsShouldThrowException()
     {
@@ -170,7 +170,7 @@ class GetProductTest extends TestCase
         $limit = 555;
         $skuArr = ['64_ctrl'];
 
-        // Create a new instance of DeleteProduct
+        // Create a new instance of GetVariationGroup
         $getVariationGroup = new GetVariationGroup($accountToken, $secretKey, $mockClient);
 
         // Expect an exception from the request
@@ -203,7 +203,7 @@ class GetProductTest extends TestCase
         $limit = 100;
         $skuArr = ['64_ctrl'];
 
-        // Create a new instance of DeleteProduct
+        // Create a new instance of GetVariationGroup
         $getVariationGroup = new GetVariationGroup($accountToken, $secretKey, $mockClient);
 
         // Expect an exception from the request
