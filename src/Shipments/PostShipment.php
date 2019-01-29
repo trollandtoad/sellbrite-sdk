@@ -36,6 +36,7 @@ class PostShipment extends Core
         switch ($statusCode)
         {
             case 200:
+            case 201:
                 return $messageArr['body'];
             case 400:
                 throw new \Exception('400 Bad Request - ' . $messageArr['error']);
