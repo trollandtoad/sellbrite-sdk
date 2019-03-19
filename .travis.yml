@@ -17,7 +17,7 @@ script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t 704578a8-a115-478a-b0dc-f3dfb6f90288
+  - bash <(curl -s https://codecov.io/bash) -t c7e53ca4-fb5c-4547-92fc-3828f0730156
 
 notifications:
   email:
