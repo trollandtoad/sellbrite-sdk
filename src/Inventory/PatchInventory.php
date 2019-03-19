@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Inventory;
+namespace TrollAndToad\Sellbrite\Inventory;
 
-use dqfan2012\Sellbrite\Core\Core;
+use TrollAndToad\Sellbrite\Core\Core;
 
 /**
  * This POST endpoint creates an inventory record only if it does not exist. If the inventory
@@ -34,7 +34,7 @@ class PatchInventory extends Core
         $apiHeaders['body'] = json_encode($invArr);
 
         // Send the HTTP request to the API endpoint and get the response stream
-        $response = $this->httpClient->request('PACH', $url, $apiHeaders);
+        $response = $this->httpClient->request('PATCH', $url, $apiHeaders);
 
         // Get the status code returned with the response
         $statusCode = $response->getStatusCode();

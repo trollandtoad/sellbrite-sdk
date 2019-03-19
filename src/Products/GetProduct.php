@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Products;
+namespace TrollAndToad\Sellbrite\Products;
 
-use dqfan2012\Sellbrite\Core\Core;
+use TrollAndToad\Sellbrite\Core\Core;
 
 /**
  * The Product API isn't documented enough. Will not use until it is.

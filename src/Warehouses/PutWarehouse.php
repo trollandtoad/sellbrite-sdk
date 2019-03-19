@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Warehouses;
+namespace TrollAndToad\Sellbrite\Warehouses;
 
-use dqfan2012\Sellbrite\Core\Core;
+use TrollAndToad\Sellbrite\Core\Core;
 
 class PutWarehouse extends Core
 {

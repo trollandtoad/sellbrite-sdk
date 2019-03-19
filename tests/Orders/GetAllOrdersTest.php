@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Test\Orders;
+namespace TrollAndToad\Sellbrite\Test\Orders;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use dqfan2012\Sellbrite\Orders\GetAllOrders;
+use TrollAndToad\Sellbrite\Orders\GetAllOrders;
 
 class GetAllOrdersTest extends TestCase
 {

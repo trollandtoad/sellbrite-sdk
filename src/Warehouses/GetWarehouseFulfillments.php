@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Warehouses;
+namespace TrollAndToad\Sellbrite\Warehouses;
 
-use dqfan2012\Sellbrite\Core\Core;
-use dqfan2012\Sellbrite\Traits\Validatable\DateFieldsTrait;
-use dqfan2012\Sellbrite\Traits\Validatable\TextFieldsTrait;
+use TrollAndToad\Sellbrite\Core\Core;
+use TrollAndToad\Sellbrite\Traits\Validatable\DateFieldsTrait;
+use TrollAndToad\Sellbrite\Traits\Validatable\TextFieldsTrait;
 
 class GetWarehouseFulfillments extends Core
 {

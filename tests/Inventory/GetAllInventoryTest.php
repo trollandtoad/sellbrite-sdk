@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Test\Inventory;
+namespace TrollAndToad\Sellbrite\Test\Inventory;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use dqfan2012\Sellbrite\Inventory\GetAllInventory;
+use TrollAndToad\Sellbrite\Inventory\GetAllInventory;
 
 class GetAllInventoryTest extends TestCase
 {
