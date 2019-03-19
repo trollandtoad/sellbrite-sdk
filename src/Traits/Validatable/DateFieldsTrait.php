@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace dqfan2012\Sellbrite\Traits\Validatable;
+namespace TrollAndToad\Sellbrite\Traits\Validatable;
 
 use Carbon\Carbon;
 
