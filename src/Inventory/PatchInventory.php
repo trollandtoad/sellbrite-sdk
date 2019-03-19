@@ -13,11 +13,13 @@ use dqfan2012\Sellbrite\Core\Core;
  */
 class PatchInventory extends Core
 {
-    /**
-     * @param array $invArr Array of inventory to create at sellbrite
-     *
-     * @return string|object
-     */
+   /**
+    * @param array|null $invArr Array of inventory to create at sellbrite
+    *
+    * @return mixed
+    * @throws \Exception
+    * @throws \GuzzleHttp\Exception\GuzzleException
+    */
     public function sendRequest(array $invArr = null)
     {
         if (count($invArr['inventory']) > 50)
@@ -34,7 +36,7 @@ class PatchInventory extends Core
         $apiHeaders['body'] = json_encode($invArr);
 
         // Send the HTTP request to the API endpoint and get the response stream
-        $response = $this->httpClient->request('PACH', $url, $apiHeaders);
+        $response = $this->httpClient->request('PATCH', $url, $apiHeaders);
 
         // Get the status code returned with the response
         $statusCode = $response->getStatusCode();
