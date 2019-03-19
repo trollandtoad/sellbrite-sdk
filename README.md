@@ -21,36 +21,36 @@ $ composer require trollandtoad/sellbrite-sdk
 
 **Channels**
 
- - [x] GET **/channels** - 3 Tests
+- GET **/channels** - 3 Tests
 
 **Inventory**
 
- - [x] GET **/inventory** - 7 Tests
- - [x] PATCH **/inventory** - 5 Tests
- - [x] POST **/inventory** - 5 Tests
- - [x] PUT **/inventory** - 4 Tests
+ - GET **/inventory**
+ - PATCH **/inventory**
+ - POST **/inventory**
+ - PUT **/inventory**
 
 **Orders**
 
- - [x] GET **/orders** - 7 Tests
- - [x] GET **/orders/:sb_order_seq** - 3 Tests
+ - GET **/orders**
+ - GET **/orders/:sb_order_seq**
 
 **Shipments**
 
- - [x] POST **/shipments** - 6 Tests
+ - POST **/shipments**
 
 **Warehouses**
 
- - [x] GET **/warehouses** - 3 Tests
- - [x] POST **/warehouses** - 5 Tests
- - [x] PUT **/warehouses** - 6 Tests
- - [x] GET **/warehouses/fulfillments/:uuid** - 5 Tests
+ - GET **/warehouses**
+ - POST **/warehouses**
+ - PUT **/warehouses**
+ - GET **/warehouses/fulfillments/:uuid**
 
 **Products**
 
- - [x] GET **/products** - 4 Tests
- - [x] POST **/products/{sku}** - 5 Tests
- - [x] DELETE **/products/{sku}** - 4 Tests
+ - GET **/products**
+ - POST **/products/{sku}**
+ - DELETE **/products/{sku}**
 
 **Variation Groups**
 

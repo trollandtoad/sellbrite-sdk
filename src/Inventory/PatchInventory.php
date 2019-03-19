@@ -13,11 +13,13 @@ use TrollAndToad\Sellbrite\Core\Core;
  */
 class PatchInventory extends Core
 {
-    /**
-     * @param array $invArr Array of inventory to create at sellbrite
-     *
-     * @return string|object
-     */
+   /**
+    * @param array|null $invArr Array of inventory to create at sellbrite
+    *
+    * @return mixed
+    * @throws \Exception
+    * @throws \GuzzleHttp\Exception\GuzzleException
+    */
     public function sendRequest(array $invArr = null)
     {
         if (count($invArr['inventory']) > 50)
