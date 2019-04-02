@@ -54,9 +54,9 @@ $ composer require trollandtoad/sellbrite-sdk
 
 **Variation Groups**
 
- - [x] GET **/variation_groups** - 4 Tests
- - [x] DELETE **/variation_groups/{sku}** - 4 Tests
- - [x] PUT **/variation_groups/{sku}** - 7 Tests
+ - GET **/variation_groups** - 4 Tests
+ - DELETE **/variation_groups/{sku}** - 4 Tests
+ - PUT **/variation_groups/{sku}** - 7 Tests
 
 **Total** - 87 Unit Tests
 
