@@ -49,6 +49,11 @@ class GetProduct extends Core
             $apiHeaders['query']['skus'] = $skuArr;
         }
 
+        if (isset($apiHeaders['query'])) {
+            $apiHeaders['query'] = http_build_query($apiHeaders['query']);
+            $apiHeaders['query'] = preg_replace('/%5B(?:[0-9]|[1-9][0-9]+)%5D=/', '=', $apiHeaders['query']);
+        }
+
         // Send the HTTP request to the API endpoint and get the response stream
         $response = $this->httpClient->request('GET', $url, $apiHeaders);
 
