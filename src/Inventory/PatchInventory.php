@@ -48,7 +48,7 @@ class PatchInventory extends Core
         switch ($statusCode)
         {
             case 200:
-                return $messageArr['body'];
+                return $response;
             case 401:
                 throw new \Exception("401 Unauthorized - HTTP Basic: Access denied.");
                 break;
