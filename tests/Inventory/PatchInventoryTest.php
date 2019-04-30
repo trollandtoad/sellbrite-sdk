@@ -73,9 +73,9 @@ class PatchInventoryTest extends TestCase
         $patchInventory = new PatchInventory($accountToken, $secretKey, $mockClient);
 
         // Get the JSON response from the request
-        $responseStr = $patchInventory->sendRequest($inventoryArray);
+        $response = $patchInventory->sendRequest($inventoryArray);
 
-        $this->assertEquals($responseStr, 'Request received');
+        $this->assertEquals(200, $response->getStatusCode());
     } // End public function testPatchInventoryApiCallSuccessfullyUpdateItems
 
     public function testPatchInventoryApiCallMoreThan50ItemsError()
