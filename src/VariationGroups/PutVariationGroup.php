@@ -60,6 +60,8 @@ class PutVariationGroup extends Core
             $apiHeaders['body']['images'] = $images;
         }
 
+        $apiHeaders['body'] = json_encode($apiHeaders['body']);
+
         // Send the HTTP request to the API endpoint and get the response stream
         $response = $this->httpClient->request('PUT', $url, $apiHeaders);
 

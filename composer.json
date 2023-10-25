@@ -30,17 +30,34 @@
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.1.8|^8.0",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.3",
-        "carbondate/carbon": "^1.33"
+        "guzzlehttp/guzzle": "^6.5.8|^7.4.5",
+        "nesbot/carbon": "^2.13.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.4",
-        "mockery/mockery": "^1.2"
+        "mockery/mockery": "^1.2",
+        "roave/security-advisories": "dev-latest",
+        "symfony/phpunit-bridge": "^6.3",
+        "symfony/thanks": "^1.2"
+    },
+    "scripts": {
+        "composer:validate": "@composer validate --no-check-all --strict",
+        "test:phpunit": [
+            "@putenv XDEBUG_MODE=coverage",
+            "simple-phpunit --order-by=random --testdox"
+        ],
+        "test": [
+            "@composer run-script composer:validate",
+            "@composer check-platform-reqs",
+            "@composer run-script test:phpunit"
+        ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/thanks": true
+        }
     }
 }

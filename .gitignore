@@ -23,3 +23,11 @@
 
 # ignore code coverage folder
 /tests/coverage/*
+coverage/*
+coverage.xml
+
+# Ignore Composer lockfile since this is a library
+composer.lock
+
+# PHPUnit cache files
+.phpunit.result.cache

@@ -1,9 +1,9 @@
 <p align="center">
-    <a href="https://travis-ci.org/trollandtoad/sellbrite-sdk" rel="nofollow">
-        <img src="https://travis-ci.org/trollandtoad/sellbrite-sdk.svg?branch=master" alt="Build Status" style="max-width: 100%;">
+    <a href="https://github.com/trollandtoad/sellbrite-sdk/actions/workflows/run-tests.yml">
+        <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/trollandtoad/sellbrite-sdk/run-tests.yml?style=flat-square&cacheSeconds=3600">
     </a>
     <a href="https://codecov.io/gh/trollandtoad/sellbrite-sdk" rel="nofollow">
-        <img src="https://codecov.io/gh/trollandtoad/sellbrite-sdk/branch/master/graph/badge.svg" alt="codecov" style="max-width: 100%;" />
+        <img alt="Codecov" src="https://img.shields.io/codecov/c/github/trollandtoad/sellbrite-sdk?style=flat-square&cacheSeconds=3600">
     </a>
 </p>
 
