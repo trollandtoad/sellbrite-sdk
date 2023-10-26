@@ -13,8 +13,8 @@ This is a PHP library that wraps the Guzzle HTTP Client to interact with the Sel
 
 ## Installation
 
-```
-$ composer require trollandtoad/sellbrite-sdk
+```bash
+composer require trollandtoad/sellbrite-sdk
 ```
 
 ## Covered API Calls
