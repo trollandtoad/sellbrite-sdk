@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace TrollAndToad\Sellbrite\Traits\Validatable;
 
-use Carbon\Carbon;
+use DateTime;
+use Exception;
 
 trait DateFieldsTrait
 {
     private function isDateValid(string $dateField)
     {
         try {
-            Carbon::parse($dateField);
+            new DateTime($dateField);
+
             return true;
-        } catch (\Exception $e)
-        {
+        } catch (Exception $e) {
             return false;
         }
     } // function validateDateField
