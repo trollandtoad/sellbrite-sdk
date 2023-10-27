@@ -54,7 +54,7 @@ jobs:
         run: composer run-script test
 
       - name: Upload coverage
-        if: ${{ github.event_name != 'schedule' && matrix.php == '8.3' }}
+        if: ${{ github.event_name != 'schedule' && matrix.php == '8.2' }}
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
